@@ -1,0 +1,12 @@
+{
+  "name": "@mf/data",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "build": "NODE_ENV=production webpack --config ./config/webpack/prod.conf.js"
+  },
+  "dependencies": {
+    "moment": "^2.29.4"
+  }
+}

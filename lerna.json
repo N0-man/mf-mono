@@ -1,0 +1,12 @@
+{
+  "exact": true,
+  "npmClient": "yarn",
+  "npmClientArgs": ["--exact", "--no-optional"],
+  "useWorkspaces": true,
+  "version": "independent",
+  "yes": true,
+  "packages": [
+    "packages/*",
+    "tools/*"
+  ]
+}

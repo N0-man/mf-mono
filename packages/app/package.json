@@ -1,0 +1,9 @@
+{
+  "name": "@mf/app",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "build": "webpack --config ./config/webpack/prod.conf.js"
+  }
+}

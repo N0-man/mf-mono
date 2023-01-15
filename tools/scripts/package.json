@@ -1,0 +1,37 @@
+{
+  "name": "@mf/scripts",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=14.15.0"
+  },
+  "bin": {
+    "mf-scripts": "./bin/run.js"
+  },
+  "files": [
+    "/bin",
+    "/src"
+  ],
+  "dependencies": {
+    "@oclif/command": "1.8.0",
+    "@oclif/config": "1.17.0",
+    "@oclif/plugin-help": "3.2.1",
+    "express": "4.17.1",
+    "inquirer": "7.3.3",
+    "webpack-dev-middleware": "4.0.2"
+  },
+  "oclif": {
+    "commands": "./src/commands",
+    "bin": "mf-scripts",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "1.26.0",
+    "eslint-config-oclif": "3.1.0"
+  },
+  "scripts": {
+    "lint": "eslint ."
+  }
+}

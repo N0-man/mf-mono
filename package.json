@@ -1,0 +1,43 @@
+{
+  "name": "mf-mono",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": {
+    "node": ">= 14.15",
+    "yarn": ">= 1.22"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "tools/*"
+    ]
+  },
+  "browserslist": [
+    "extends @mf/browserslist-config-mf"
+  ],
+  "scripts": {
+    "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('Use yarn to install, instead of npm')\"",
+    "boot": "lerna bootstrap --reject-cycles",
+    "pkg:add": "lerna add --scope",
+    "pkg:run": "lerna run --stream --scope",
+    "start": "NODE_ENV=development mf-scripts start"
+  },
+  "dependencies": {
+    "core-js": "3.8.2",
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.12.10",
+    "@babel/eslint-parser": "7.12.1",
+    "@mf/browserslist-config-mf": "file:tools/browserslist-config-mf",
+    "@mf/config": "file:tools/config",
+    "chalk": "4.1.0",
+    "eslint": "7.17.0",
+    "html-webpack-tags-plugin": "2.0.17",
+    "lerna": "3.22.1",
+    "webpack": "5.11.1",
+    "webpack-cli": "4.3.1"
+  }
+}
