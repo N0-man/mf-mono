@@ -1,4 +1,5 @@
-# Module Federation Monorepo boilerplate to demonstrate MF
+# Webpack Module Federation
+Boilerplate to demonstrate MicroFrontends (Reactjs) using [Webpack Module Federation](https://webpack.js.org/concepts/module-federation/)
 
 ## Packages
 
