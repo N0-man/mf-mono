@@ -30,3 +30,4 @@ reports
 .lighthouseci
 
 size-plugin.json
+coverage-temp/
