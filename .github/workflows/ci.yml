@@ -18,6 +18,12 @@ jobs:
         with:
           name: coverage-report-${{ github.sha }}
           path: ./coverage
+      - name: Report test coverage to DeepSource
+        uses: deepsourcelabs/test-coverage-action@master
+        with:
+          key: javascript
+          coverage-file: coverage-temp/coverage-final.json
+          dsn: ${{ secrets.DEEPSOURCE_TOKEN }}
   coverage:
     name: Test Coverage
     runs-on: ubuntu-latest
@@ -37,9 +43,9 @@ jobs:
         working-directory: mf-mono/
         run: |
           ls -lrt
-          git config user.name ${{ secrets.USERNAME}}
-          git config user.email ${{ secrets.EMAIL}}
+          git config user.name ${{ secrets.USERNAME }}
+          git config user.email ${{ secrets.EMAIL }}
           git add .
           git commit -m "upload coverage report"
-          git push 'https://${{ secrets.USERNAME}}:${{ secrets.PAT}}@github.com/N0-man/mf-mono.git' gh-pages
+          git push 'https://${{ secrets.USERNAME }}:${{ secrets.PAT }}@github.com/N0-man/mf-mono.git' gh-pages
       - run: echo "Coverage Reprot https://n0-man.github.io/mf-mono/coverage-report-${{ github.sha }}"
