@@ -15,6 +15,8 @@ module.exports = {
         "node"
     ],
     collectCoverage: true,
+    coverageProvider: 'v8',
+    collectCoverageFrom: ['<rootDir>/src/**/*.{js,jsx}'],
     coveragePathIgnorePatterns: [
         "(tests/.*.mock).(jsx?|tsx?)$"
     ],

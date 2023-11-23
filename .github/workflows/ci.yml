@@ -6,7 +6,9 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
@@ -22,8 +24,21 @@ jobs:
         uses: deepsourcelabs/test-coverage-action@master
         with:
           key: javascript
-          coverage-file: coverage-temp/coverage-final.json
+          coverage-file: coverage/lcov.info
           dsn: ${{ secrets.DEEPSOURCE_TOKEN }}
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }} # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.organization=n03an
+            -Dsonar.projectKey=n03an_sonarcloud
+            -Dsonar.sources=packages/
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+            -Dsonar.coverage.exclusions="**/config/*","**/*.config.js","**/src/index.js","**/src/**/*.spec.js"
+            -Dsonar.verbose=true
   coverage:
     name: Test Coverage
     runs-on: ubuntu-latest
