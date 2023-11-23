@@ -26,11 +26,16 @@
     "test": "lerna run test",
     "test:parallel": "lerna run test --parallel",
     "coverage": "yarn test --coverage",
-    "prepare": "husky install",
-    "start": "lerna run start --parallel"
+    "start": "lerna run start --parallel",
+    "merge-coverage-report-jsons": "istanbul-merge --out coverage-temp/coverage-final.json packages/data/coverage/coverage-final.json packages/header/coverage/coverage-final.json",
+    "generate-coverage-all-packages": "nyc report --reporter=html --reporter=text --reporter=lcov --reporter=clover --report-dir=coverage --temp-dir=coverage-temp",
+    "posttest": "yarn merge-coverage-report-jsons && yarn generate-coverage-all-packages"
   },
   "dependencies": {
+    "babel-plugin-istanbul": "^6.1.1",
     "core-js": "3.8.2",
+    "istanbul-merge": "^2.0.0",
+    "nyc": "^15.1.0",
     "react": "17.0.1",
     "react-dom": "17.0.1"
   },
@@ -43,13 +48,13 @@
     "@testing-library/react": "^12.1.2",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.3.0",
+    "chalk": "4.1.0",
     "concurrently": "^5.3.0",
     "dayjs": "^1.8.36",
     "eslint": "^7.20.0",
     "eslint-config-prettier": "^8.2.0",
-    "jest": "^26.4.2",
-    "chalk": "4.1.0",
     "html-webpack-tags-plugin": "2.0.17",
+    "jest": "^26.4.2",
     "lerna": "3.22.1",
     "webpack": "5.11.1",
     "webpack-cli": "4.3.1"

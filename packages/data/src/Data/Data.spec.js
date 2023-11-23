@@ -9,4 +9,14 @@ describe("Data Component", () => {
     expect(divs.length).toBe(10000);
   });
 
+  it("renders divs with moment dates", () => {
+    const { container } = render(<Data />);
+    const momentDivs = Array.from(container.querySelectorAll("div")).map(
+      (div) => div.textContent
+    );
+
+    momentDivs.forEach((momentInstance, index) => {
+      expect(momentDivs[index]).toEqual(momentInstance.toString());
+    });
+  });
 });
