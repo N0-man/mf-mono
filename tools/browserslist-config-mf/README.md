@@ -1,1 +1,0 @@
-# `@mf/browserslist-config-mf`
