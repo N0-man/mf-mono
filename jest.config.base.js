@@ -20,5 +20,6 @@ module.exports = {
     coveragePathIgnorePatterns: [
         "(tests/.*.mock).(jsx?|tsx?)$"
     ],
-    verbose: true
+    verbose: true,
+    testResultsProcessor: "./node_modules/jest-html-reporter"
 };

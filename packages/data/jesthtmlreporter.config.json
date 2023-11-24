@@ -1,0 +1,5 @@
+{
+	"pageTitle": "Data MF Tests",
+	"outputPath": "coverage/index-pretty.html",
+	"includeFailureMsg": true
+}
