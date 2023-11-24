@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1700791770619" clover="3.2.0">
+  <project timestamp="1700791770619" name="All files">
+    <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3" elements="8" coveredelements="8" complexity="0" loc="5" ncloc="5" packages="2" files="2" classes="2"/>
+    <package name="data.src.Data">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="Data.jsx" path="/home/runner/work/mf-mono/mf-mono/packages/data/src/Data/Data.jsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="10000" type="stmt"/>
+        <line num="13" count="30000" type="stmt"/>
+      </file>
+    </package>
+    <package name="header.src.Header">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Header.jsx" path="/home/runner/work/mf-mono/mf-mono/packages/header/src/Header/Header.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="2" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
