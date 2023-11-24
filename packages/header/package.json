@@ -4,6 +4,8 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "build": "NODE_ENV=production webpack --config ./config/webpack/prod.conf.js"
+    "build": "NODE_ENV=production webpack --config ./config/webpack.config.js",
+    "test": "jest --config jest.config.js --verbose false --passWithNoTests --testResultsProcessor=jest-html-reporter",
+    "coverage": "yarn test --coverage"
   }
 }

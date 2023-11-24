@@ -1,4 +1,4 @@
-import './styles.css';
+// import './styles.css';
 
 import React from "react";
 import moment from "moment";
@@ -10,6 +10,6 @@ for (let i = 0; i < 10000; i++) {
   data.push(moment());
 }
 
-const Data = () => data.map((d) => <div>{d.toString()}</div>);
+const Data = () => data.map((d) => <div id={d.id}>{d.toString()}</div>);
 
 export default Data;

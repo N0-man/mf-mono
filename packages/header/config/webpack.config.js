@@ -12,7 +12,7 @@ const webpackConfigFactory = function (options) {
 
   const webpackConfig = {
     output: {
-      publicPath: 'http://localhost:3000/',
+      publicPath: 'http://localhost:3002/',
     },
     plugins: [
       new ModuleFederationPlugin({

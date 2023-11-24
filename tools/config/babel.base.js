@@ -25,5 +25,8 @@ module.exports = {
     production: {
       plugins: ["transform-remove-console", "transform-react-remove-prop-types"],
     },
+    test: {
+      plugins: [ "istanbul" ]
+    }
   },
 };

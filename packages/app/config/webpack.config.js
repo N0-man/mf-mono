@@ -1,22 +1,22 @@
-const { merge } = require('webpack-merge');
-const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-const HtmlWebpackTagsPlugin = require("html-webpack-tags-plugin");
+const {merge} = require('webpack-merge')
+const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
+const HtmlWebpackTagsPlugin = require('html-webpack-tags-plugin')
 // const HtmlWebpackPlugin = require("html-webpack-plugin");
-const TerserPlugin = require('terser-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin')
 
-const baseConfigFactory = require('@mf/config/webpack.base');
-const sharedDependencies = require('@mf/config/sharedDependencies');
+const baseConfigFactory = require('@mf/config/webpack.base')
+const sharedDependencies = require('@mf/config/sharedDependencies')
 
 const webpackConfigFactory = function (options) {
-  const baseConfig = baseConfigFactory(options);
-  const { env } = options ?? {};
+  const baseConfig = baseConfigFactory(options)
+  const {env} = options ?? {}
 
   const webpackConfig = {
     plugins: [
       new ModuleFederationPlugin({
         remoteType: 'var',
         name: 'AppShell',
-        library: { type: "var", name: "AppShell" },
+        library: {type: 'var', name: 'AppShell'},
         remotes: {
           '@mf/header': 'mfHeader',
           '@mf/data': 'mfData',
@@ -26,12 +26,15 @@ const webpackConfigFactory = function (options) {
         },
       }),
       new HtmlWebpackTagsPlugin({
-        tags: ["http://localhost:3000/remoteEntry.js", "http://localhost:3001/remoteEntry.js"],
+        tags: [
+          'http://localhost:3002/remoteEntry.js',
+          'http://localhost:3001/remoteEntry.js',
+        ],
         append: false,
         publicPath: false,
       }),
     ],
-  };
+  }
 
   // const webpackConfig = {
   //   plugins: [
@@ -48,7 +51,7 @@ const webpackConfigFactory = function (options) {
   //   ],
   // };
 
-  return merge(baseConfig, webpackConfig);
-};
+  return merge(baseConfig, webpackConfig)
+}
 
-module.exports = webpackConfigFactory;
+module.exports = webpackConfigFactory
